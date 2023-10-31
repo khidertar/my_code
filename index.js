@@ -1,8 +1,9 @@
 //imports from external packages
 const express = require('express')
 const app = express()
-//const port = 3000
 require('dotenv').config()
+const port = process.env.PORT
+//const port = 3000
 
 //imports from my files
 const fruitsData = require("./fruits.json")
@@ -48,6 +49,6 @@ app.post("/fruits", (req,res) => { //request, response
   res.send("New fruit made")
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
