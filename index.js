@@ -1,6 +1,8 @@
 //imports from external packages
 const express = require('express')
 const app = express()
+const cors = require("cors") //stops cors error?
+const fs = require("fs") //filesystem 
 require('dotenv').config()
 const port = process.env.PORT
 //const port = 3000
@@ -12,6 +14,8 @@ const { logger } = require("./logger")
 
 //middleware
 app.use(express.json()) //middleware to parse json data in request body
+app.use(cors())
+
 app.use(logger)
 
 
